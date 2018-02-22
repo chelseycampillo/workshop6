@@ -1,4 +1,5 @@
-//the radius of the circles decreases every time they hit the edge of the canvas
+//this uses a single array instead of 5 different arrays
+//each entry in this "circles" array has 5 different properties 
 
 var circles = [];
 
@@ -39,12 +40,17 @@ function draw() {
 
     // check boundaries and update directions
     if (circle.x > width || circle.x < 0) { //checking the x for that circle against width and 0
-      circle.r -= 2
-      circle.xd = -circle.xd;
+        circle.r -= 5
+      	circle.xd = -circle.xd;
+      	 if (circle.r = 1) {
+      			circle.r = 20;
+    			}
+      
     }
     if (circle.y > height || circle.y < 0) {
       circle.r -= 5;
       circle.yd = -circle.yd;
     }
+   
   }
 }
