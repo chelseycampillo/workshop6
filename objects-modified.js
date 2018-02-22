@@ -1,5 +1,4 @@
-//this uses a single array instead of 5 different arrays
-//each entry in this "circles" array has 5 different properties 
+//the radius of the circle decreases every time the circle hits and edge of the canvas
 
 var circles = [];
 
