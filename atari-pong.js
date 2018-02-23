@@ -44,20 +44,16 @@ function draw() {
   rect(player1.x, player1.y, player1.wt, player1.ht);
   rect(player2.x, player2.y, player2.wt, player2.ht);
   
-}
-
-function keyPressed() {
-  if (key == 'E') {
-    player1.y -= 3; //moves left paddle up
-  }
-  if (key == 'D') {
+  if (keyIsDown (69)) { //keycode for E
+  	player1.y -= 3; //moves left paddle up
+  	}
+  if (keyIsDown (68)) { //keycode for D
     player1.y += 3; //moves left paddle down
-  }
-  if (key == 'I') {
+  	}
+  if (keyIsDown (73)) { //keycode for I
     player2.y -= 3; //moves right paddle up
-  }
-  if (key == 'K') {
+  	}
+  if (keyIsDown (75)) { //keycode for K
     player2.y += 3; //moves right paddle down
-  }
+  	}
 }
-  
