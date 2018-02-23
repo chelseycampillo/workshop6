@@ -36,8 +36,11 @@ function draw() {
   puck.x += puck.xSpeed;
   puck.y += puck.ySpeed;
   
-  if (puck.x > width || puck.x < 0) {
+  if (puck.x == player1.x && player1.y) {
     puck.xSpeed = -puck.xSpeed;
+  } else if (puck.x == player2.x && player2.y) {
+    puck.xSpeed = -puck.xSpeed/2;
+    
   }
   
   //draw paddles
@@ -56,4 +59,20 @@ function draw() {
   if (keyIsDown (75)) { //keycode for K
     player2.y += 3; //moves right paddle down
   	}
+  
+  //resetting game when puck surpasses edge
+  if (puck.x > width || puck.x < 0 || puck.y > height || puck.y < 0) {
+  	ellipse(width/2, height/2, 10);
+   	restartGame();
+  }
 }
+	  
+function restartGame() {
+  puck.x = 300;
+  puck.y = 200;
+  puck.xSpeed = (-3 || 3);
+  puck.ySpeed = (-1 || 1);
+}
+
+
+  
